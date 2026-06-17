@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Social Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Mini Social Media Platform</h1>
+
+<div class="navbar">
+    Instagram Clone
+</div>
+
+<div class="container">
+
+    <div class="profile">
+        <img src="https://i.pravatar.cc/150?img=5">
+        <h2>Varshitha</h2>
+        <p>Full Stack Developer</p>
+        <button class="follow-btn">Follow</button>
+    </div>
+
+    <div class="post-box">
+        <textarea
+        id="postText"
+        placeholder="What's on your mind?">
+        </textarea>
+
+        <br><br>
+
+        <button
+        class="post-btn"
+        onclick="createPost()">
+        Post
+        </button>
+    </div>
+
+    <div id="posts"></div>
+
+</div>
+
+<script>
+function createPost(){
+
+const text =
+document.getElementById("postText").value;
+
+if(text=="") return;
+
+const post =
+document.createElement("div");
+
+post.style.border="1px solid black";
+post.style.margin="10px";
+post.style.padding="10px";
+
+post.innerHTML=text;
+
+document.getElementById("posts")
+.appendChild(post);
+
+document.getElementById("postText")
+.value="";
+}
+</script>
+
+</body>
+</html>
